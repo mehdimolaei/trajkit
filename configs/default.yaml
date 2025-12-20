@@ -1,0 +1,8 @@
+project:
+  name: colloid
+  units: micron
+
+analysis:
+  msd:
+    max_lag: 200
+    estimator: time_average
