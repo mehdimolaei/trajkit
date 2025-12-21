@@ -13,6 +13,7 @@ dependencies = [
   "scipy>=1.11",
   "pandas>=2.0",
   "matplotlib>=3.8",
+  "pyarrow>=14",
 ]
 
 [project.optional-dependencies]
@@ -21,6 +22,11 @@ dev = [
   "ruff>=0.5",
   "black>=24.0",
   "mypy>=1.8",
+]
+viz = [
+  "plotly>=5.24",
+  "nbformat>=4.2",
+  "ipywidgets>=8.0",
 ]
 
 [tool.setuptools]

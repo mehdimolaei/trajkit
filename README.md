@@ -1,7 +1,8 @@
 # colloid
 
-A toolkit for reproducible trajectory analytics and flow-field inference
-for Brownian and active colloids.
+A toolkit for reproducible trajectory (time-series) analytics and flow-field inference
+for Brownian and  nonBorownian diffusion processes.
+See [ACKNOWLEDGMENTS](ACKNOWLEDGMENTS.md)
 
 ## Quickstart
 
