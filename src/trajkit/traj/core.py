@@ -144,7 +144,7 @@ class Trajectory:
     # statistics helpers
     def msd(self, *, lags: Optional[Iterable[int]] = None, dims: Optional[Iterable[int]] = None):
         """Mean squared displacement for this trajectory."""
-        from colloid.stats import msd
+        from trajkit.stats import msd
 
         return msd(self, lags=lags, dims=dims)
 
@@ -328,6 +328,6 @@ class TrajectorySet:
         aggregate: bool = False,
     ):
         """Mean squared displacement over all trajectories."""
-        from colloid.stats import msd_trajectory_set
+        from trajkit.stats import msd_trajectory_set
 
         return msd_trajectory_set(self, lags=lags, dims=dims, aggregate=aggregate)

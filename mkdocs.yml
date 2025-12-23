@@ -1,7 +1,7 @@
-site_name: colloid
+site_name: trajkit
 site_description: Trajectory analytics and flow-field inference for Brownian and active colloids
-repo_name: mehdimolaei/colloid
-repo_url: https://github.com/mehdimolaei/colloid
+repo_name: mehdimolaei/trajkit
+repo_url: https://github.com/mehdimolaei/trajkit
 edit_uri: edit/main/docs/
 
 theme:

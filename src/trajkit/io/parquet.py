@@ -7,7 +7,7 @@ from typing import Any, Dict, Optional
 
 import pandas as pd
 
-from colloid.traj.core import Trajectory, TrajectorySet
+from trajkit.traj.core import Trajectory, TrajectorySet
 
 
 def save_trajectory_set(

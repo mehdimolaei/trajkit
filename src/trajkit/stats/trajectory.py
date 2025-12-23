@@ -5,7 +5,7 @@ from typing import Iterable, Optional, Sequence
 import numpy as np
 import pandas as pd
 
-from colloid.traj.core import Trajectory, TrajectorySet
+from trajkit.traj.core import Trajectory, TrajectorySet
 
 
 def msd(

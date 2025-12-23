@@ -1,4 +1,4 @@
-# colloid
+# trajkit
 
 A toolkit for reproducible trajectory (time-series) analytics and flow-field inference
 for Brownian and  nonBorownian diffusion processes.

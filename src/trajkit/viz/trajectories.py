@@ -4,14 +4,14 @@ from typing import Iterable, Mapping, MutableMapping, Optional, Sequence
 
 import pandas as pd
 
-from colloid.traj import TrajectorySet
+from trajkit.traj import TrajectorySet
 
 
 def _require_plotly():
     try:
         import plotly.express as px  # noqa: F401
     except ImportError as exc:  # pragma: no cover - thin import guard
-        raise ImportError("Install plotly to use colloid.viz (pip install plotly>=5.24)") from exc
+        raise ImportError("Install plotly to use trajkit.viz (pip install plotly>=5.24)") from exc
 
 
 def _frame_table(ts: TrajectorySet, track_ids: Optional[Iterable[str]] = None) -> pd.DataFrame:

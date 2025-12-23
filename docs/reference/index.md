@@ -2,12 +2,12 @@
 
 ## Trajectories
 
-::: colloid.Trajectory
+::: trajkit.Trajectory
 
-::: colloid.TrajectorySet
+::: trajkit.TrajectorySet
 
 ## IO
 
-::: colloid.save_trajectory_set
+::: trajkit.save_trajectory_set
 
-::: colloid.load_trajectory_set
+::: trajkit.load_trajectory_set

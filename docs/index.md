@@ -1,6 +1,6 @@
-# colloid
+# trajkit
 
-**colloid** is a Python toolkit for reproducible trajectory analytics and flow-field inference
+**trajkit** is a Python toolkit for reproducible trajectory analytics and flow-field inference
 for Brownian and active colloids.
 
 ## What you can do
@@ -12,7 +12,7 @@ for Brownian and active colloids.
 
 ## Quickstart
 ```bash
-pip install colloid
+pip install trajkit
 
 
 ### `docs/getting-started.md`
@@ -29,7 +29,7 @@ This guide shows the basic workflow:
 
 ```python
 import numpy as np
-from colloid import Trajectory, TrajectorySet
+from trajkit import Trajectory, TrajectorySet
 
 x = np.cumsum(np.random.randn(200, 2), axis=0)  # (T, D)
 frame = np.arange(200)
@@ -48,7 +48,7 @@ ts.add(tr)
 
 ts.summary_table().head()
 
-from colloid import save_trajectory_set, load_trajectory_set
+from trajkit import save_trajectory_set, load_trajectory_set
 
 save_trajectory_set(ts, "examples/datasets/demo_brownian_2d")
 ts2 = load_trajectory_set("examples/datasets/demo_brownian_2d", frame_rate_hz=20.0)

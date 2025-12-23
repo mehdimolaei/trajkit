@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "colloid"
+name = "trajkit"
 version = "0.1.0"
 description = "Trajectory analytics and flow-field inference for Brownian and active colloids"
 readme = "README.md"
