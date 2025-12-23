@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/logo.png" alt="trajkit logo" width="260">
+</p>
+
 # trajkit
 
 A toolkit for reproducible trajectory (time-series) analytics and flow-field inference

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/logo.png" alt="trajkit logo" width="260">
+</p>
+
 # trajkit
 
 **trajkit** is a Python toolkit for reproducible trajectory analytics and flow-field inference
