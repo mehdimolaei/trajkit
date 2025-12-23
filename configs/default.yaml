@@ -1,5 +1,5 @@
 project:
-  name: colloid
+  name: trajkit
   units: micron
 
 analysis:

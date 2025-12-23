@@ -1,7 +1,12 @@
-# colloid
+<p align="center">
+  <img src="docs/assets/logo.png" alt="trajkit logo" width="260">
+</p>
 
-A toolkit for reproducible trajectory analytics and flow-field inference
-for Brownian and active colloids.
+# trajkit
+
+A toolkit for reproducible trajectory (time-series) analytics and flow-field inference
+for Brownian and  nonBorownian diffusion processes.
+See [ACKNOWLEDGMENTS](ACKNOWLEDGMENTS.md)
 
 ## Quickstart
 

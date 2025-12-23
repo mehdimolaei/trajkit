@@ -1,2 +1,2 @@
 def test_import():
-    import colloid  # noqa: F401
+    import trajkit  # noqa: F401
