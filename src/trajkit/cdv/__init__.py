@@ -13,6 +13,14 @@ from .distance import euclidean_distance
 from .neighbors import RegularGridNeighborFinder
 from .accumulate import EnsembleAccumulator
 from .cdv import run_cdv
+from .measurements import (
+    measurement_bounds,
+    displacement_batch_from_trajectory,
+    displacement_batches_from_trajectory_set,
+    displacement_at_time_from_trajectory,
+    displacement_at_time_from_trajectory_set,
+    connection_batch_from_dataframes,
+)
 
 __all__ = [
     "CDVConfig",
@@ -24,4 +32,10 @@ __all__ = [
     "RegularGridNeighborFinder",
     "EnsembleAccumulator",
     "run_cdv",
+    "measurement_bounds",
+    "displacement_batch_from_trajectory",
+    "displacement_batches_from_trajectory_set",
+    "displacement_at_time_from_trajectory",
+    "displacement_at_time_from_trajectory_set",
+    "connection_batch_from_dataframes",
 ]
