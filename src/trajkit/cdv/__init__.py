@@ -11,11 +11,10 @@ from .types import CDVConfig, MeasurementBatch, RegularGridSpec
 from .kernel import gaussian_kernel, hard_cutoff_kernel
 from .distance import euclidean_distance
 from .neighbors import RegularGridNeighborFinder
-from .accumulate import EnsembleAccumulator
+from .accumulate import CorrelationEnsembleAccumulator, EnsembleAccumulator
 from .cdv import run_cdv
 from .corr import (
     CorrelationBatch,
-    CorrelationEnsembleAccumulator,
     correlation_batch,
     distance_threshold_pair_filter,
 )
