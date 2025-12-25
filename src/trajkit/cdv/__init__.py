@@ -13,6 +13,12 @@ from .distance import euclidean_distance
 from .neighbors import RegularGridNeighborFinder
 from .accumulate import EnsembleAccumulator
 from .cdv import run_cdv
+from .corr import (
+    CorrelationBatch,
+    CorrelationEnsembleAccumulator,
+    correlation_batch,
+    distance_threshold_pair_filter,
+)
 from .measurements import (
     measurement_bounds,
     displacement_batch_from_trajectory,
@@ -26,12 +32,16 @@ __all__ = [
     "CDVConfig",
     "MeasurementBatch",
     "RegularGridSpec",
+    "CorrelationBatch",
+    "CorrelationEnsembleAccumulator",
+    "distance_threshold_pair_filter",
     "gaussian_kernel",
     "hard_cutoff_kernel",
     "euclidean_distance",
     "RegularGridNeighborFinder",
     "EnsembleAccumulator",
     "run_cdv",
+    "correlation_batch",
     "measurement_bounds",
     "displacement_batch_from_trajectory",
     "displacement_batches_from_trajectory_set",
