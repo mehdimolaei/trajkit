@@ -3,14 +3,7 @@
 </p>
 
 # trajkit
-## Tutorials
 
-.. toctree::
-   :maxdepth: 1
-
-   first-notebook
-   cdv-flow-field
-   msd
 
 **trajkit** is a Python toolkit for reproducible trajectory analytics and flow-field inference
 for Brownian and active colloids.
@@ -60,3 +53,11 @@ ts.summary_table().head()
 save_trajectory_set(ts, "examples/datasets/demo_brownian_2d")
 ts2 = load_trajectory_set("examples/datasets/demo_brownian_2d", frame_rate_hz=20.0)
 ```
+## Tutorials
+
+.. toctree::
+   :maxdepth: 1
+
+   first-notebook
+   cdv-flow-field
+   msd
