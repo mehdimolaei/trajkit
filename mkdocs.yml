@@ -1,3 +1,4 @@
+# Deprecated: MkDocs config retained for reference; Sphinx + RTD is now the primary docs build.
 site_name: trajkit
 site_description: Trajectory analytics and flow-field inference for Brownian and active colloids
 repo_name: mehdimolaei/trajkit
