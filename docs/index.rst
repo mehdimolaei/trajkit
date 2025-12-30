@@ -1,4 +1,4 @@
-.. image:: assets/logo.png
+.. image:: assets/long_logo.png
    :width: 260
    :align: center
 
