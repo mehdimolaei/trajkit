@@ -10,8 +10,8 @@ for Brownian and active colloids.
 ## What you can do
 - Load trajectory datasets (frame-based or non-uniform time sampling)
 - Clean and manipulate tracks
-- Compute MSD / statistics (coming next)
-- Estimate flow fields around particles (coming next)
+- Compute MSD and displacement statistics
+- Estimate flow fields around particles via CDV / correlation utilities
 - Build publishable visualizations + notebooks
 
 ## Quickstart
