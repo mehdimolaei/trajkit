@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass, field, replace
-from typing import Any, Dict, Iterable, Optional, Tuple
+from typing import Any, Dict, Iterable, Optional, Sequence, Tuple
 
 import numpy as np
 import pandas as pd
@@ -270,6 +270,125 @@ class TrajectorySet:
     calibration: Dict[str, Any] = field(default_factory=dict)
     conditions: Dict[str, Any] = field(default_factory=dict)
     meta: Dict[str, Any] = field(default_factory=dict)
+
+    @classmethod
+    def from_dataframe(
+        cls,
+        df: pd.DataFrame,
+        *,
+        dataset_id: str,
+        track_id_col: str,
+        position_cols: Sequence[str],
+        time_col: Optional[str] = None,
+        frame_col: Optional[str] = None,
+        frame_rate_hz: Optional[float] = None,
+        label_col: Optional[str] = None,
+        track_feature_cols: Sequence[str] = (),
+        frame_feature_cols: Sequence[str] = (),
+        valid_col: Optional[str] = None,
+        units: Optional[Dict[str, str]] = None,
+        calibration: Optional[Dict[str, Any]] = None,
+        conditions: Optional[Dict[str, Any]] = None,
+        meta: Optional[Dict[str, Any]] = None,
+        sort_within_track: bool = True,
+    ) -> "TrajectorySet":
+        """
+        Build a TrajectorySet from a long-form per-frame DataFrame.
+
+        Args:
+            df: Per-frame table containing coordinates and timing information.
+            dataset_id: Identifier for the resulting TrajectorySet.
+            track_id_col: Column holding the per-track identifier.
+            position_cols: Ordered columns that make up the coordinate vector.
+            time_col: Optional column giving timestamps in seconds.
+            frame_col: Optional column giving frame indices.
+            frame_rate_hz: Required when using frame_col without time_col.
+            label_col: Optional column providing per-track labels.
+            track_feature_cols: Columns treated as per-track scalars (must be constant per track).
+            frame_feature_cols: Columns copied into frame_features for each trajectory.
+            valid_col: Optional boolean column marking valid samples.
+            sort_within_track: Sort each track by time/frame before constructing.
+        """
+        pos_cols = list(position_cols)
+        if not pos_cols:
+            raise ValueError("position_cols must be non-empty.")
+        if time_col is None and frame_col is None:
+            raise ValueError("Provide at least one of time_col or frame_col.")
+        if time_col is None and frame_rate_hz is None:
+            raise ValueError("frame_rate_hz is required when using frame_col without time_col.")
+
+        required_cols = [track_id_col, *pos_cols]
+        optional_cols = [
+            c for c in (time_col, frame_col, label_col, valid_col) if c is not None
+        ]
+        optional_cols.extend(list(track_feature_cols))
+        optional_cols.extend(list(frame_feature_cols))
+        missing = [
+            c for c in required_cols + optional_cols if c is not None and c not in df.columns
+        ]
+        if missing:
+            raise KeyError(f"DataFrame missing columns: {missing}")
+
+        ts_kwargs: Dict[str, Any] = {"dataset_id": dataset_id}
+        if units is not None:
+            ts_kwargs["units"] = dict(units)
+        if calibration is not None:
+            ts_kwargs["calibration"] = dict(calibration)
+        if conditions is not None:
+            ts_kwargs["conditions"] = dict(conditions)
+        if meta is not None:
+            ts_kwargs["meta"] = dict(meta)
+        ts = cls(**ts_kwargs)
+
+        if df.empty:
+            return ts
+
+        sort_keys = [c for c in (time_col, frame_col) if c is not None]
+
+        for tid, df_tid in df.groupby(track_id_col, sort=False):
+            df_tid = df_tid.copy()
+            if sort_within_track and sort_keys:
+                df_tid = df_tid.sort_values(sort_keys).reset_index(drop=True)
+            else:
+                df_tid = df_tid.reset_index(drop=True)
+
+            label = None
+            if label_col is not None:
+                uniq = df_tid[label_col].dropna().unique()
+                if len(uniq) > 1:
+                    raise ValueError(f"label_col '{label_col}' varies within track '{tid}'.")
+                label = None if len(uniq) == 0 else uniq[0]
+
+            track_features: Dict[str, Any] = {}
+            for col in track_feature_cols:
+                vals = df_tid[col].dropna().unique()
+                if len(vals) > 1:
+                    raise ValueError(f"track_feature column '{col}' varies within track '{tid}'.")
+                if len(vals) == 0:
+                    continue
+                v = vals[0]
+                track_features[col] = v.item() if hasattr(v, "item") else v
+
+            frame_features = {col: df_tid[col].to_numpy() for col in frame_feature_cols}
+
+            label_value = None
+            if label is not None:
+                label_value = label.item() if hasattr(label, "item") else label
+
+            tr = Trajectory(
+                track_id=str(tid),
+                x=df_tid.loc[:, pos_cols].to_numpy(dtype=float),
+                t=df_tid[time_col].to_numpy(dtype=float) if time_col is not None else None,
+                frame=df_tid[frame_col].to_numpy(dtype=int) if frame_col is not None else None,
+                frame_rate_hz=frame_rate_hz,
+                valid=df_tid[valid_col].to_numpy(dtype=bool) if valid_col is not None else None,
+                label=label_value,
+                track_features=track_features,
+                frame_features=frame_features,
+            )
+            ts.add(tr)
+
+        return ts
 
     def add(self, tr: Trajectory) -> None:
         if tr.track_id in self.trajectories:
