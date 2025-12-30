@@ -58,6 +58,6 @@ ts2 = load_trajectory_set("examples/datasets/demo_brownian_2d", frame_rate_hz=20
 .. toctree::
    :maxdepth: 1
 
-   first-notebook
-   cdv-flow-field
-   msd
+   tutorials/first-notebook
+   tutorials/cdv-flow-field
+   tutorials/msd
