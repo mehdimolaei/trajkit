@@ -1,2 +1,6 @@
+sphinx
+sphinx-rtd-theme
+myst-parser
 mkdocs-material
 mkdocstrings[python]
+-e .
