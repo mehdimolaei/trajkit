@@ -1,0 +1,10 @@
+{
+  "dataset_id": "exp001_t043m_r01um_2017-08-16",
+  "units": {
+    "t": "frame",
+    "x": "pixel"
+  },
+  "calibration": {},
+  "conditions": {},
+  "meta": {}
+}

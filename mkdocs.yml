@@ -25,6 +25,7 @@ nav:
   - Tutorials:
       - tutorials/first-notebook.md
       - tutorials/cdv-flow-field.md
+      - tutorials/msd.md
   - Reference:
       - reference/index.md
 
