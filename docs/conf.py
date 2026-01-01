@@ -33,4 +33,7 @@ html_theme_options = {
     "sticky_navigation": True,
 }
 html_static_path = ["_static"]
-html_logo = "assets/long_logo.png"
+html_logo = "_static/logo.png"
+
+# Copy non-RST assets (e.g., MP4s in docs/figures) into the built site
+html_extra_path = ["figures"]

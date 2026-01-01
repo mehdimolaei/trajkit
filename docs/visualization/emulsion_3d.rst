@@ -14,8 +14,8 @@ Rendered video
 
 .. raw:: html
 
-   <video width="720" controls muted loop>
-     <source src="docs/figures/sgm_scene_v1.mp4" type="video/mp4">
+   <video width="900" controls muted loop>
+     <source src="../_static/videos/sgm_scene_v1.mp4" type="video/mp4">
      Your browser does not support the video tag.
    </video>
 
