@@ -21,3 +21,12 @@ results/reports/
 
 # Example datasets
 examples/datasets/trajcsv/airwater_1um.csv
+OldPythonScript/SGM/SGM-Copy1.ipynb
+OldPythonScript/SGM/SGM-Copy2.ipynb
+OldPythonScript/SGM/SGM-Copy3.ipynb
+OldPythonScript/SGM/SGM.ipynb
+OldPythonScript/SGM/SoftGlass.ipynb
+OldPythonScript/SGM/Untitled.ipynb
+
+# Docs build artifacts
+docs/_build/

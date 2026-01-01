@@ -29,7 +29,11 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 html_theme = "sphinx_rtd_theme"
 html_theme_options = {
     "collapse_navigation": False,
-    "navigation_depth": 4,
+    "navigation_depth": 3,
     "sticky_navigation": True,
 }
 html_static_path = ["_static"]
+html_logo = "_static/logo.png"
+
+# Copy non-RST assets (e.g., MP4s in docs/figures) into the built site
+html_extra_path = ["figures"]
