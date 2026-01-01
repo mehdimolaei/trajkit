@@ -1,5 +1,5 @@
 .. image:: _static/long_logo.png
-   :width: 260
+   :width: 360
    :align: center
 
 Trajkit — Spatio-Temporal Trajectory Toolkit
