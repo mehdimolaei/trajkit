@@ -163,6 +163,12 @@ Use the sections below to explore concepts, tutorials, and API details.
    tutorials/cdv-flow-field
    tutorials/msd
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Visualization
+
+   visualization/index
+
 
 .. toctree::
    :maxdepth: 2
