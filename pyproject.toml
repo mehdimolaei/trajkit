@@ -13,6 +13,7 @@ dependencies = [
   "scipy>=1.11",
   "pandas>=2.0",
   "matplotlib>=3.8",
+  "huggingface_hub>=0.24",
   "pyarrow>=14",
 ]
 
@@ -45,6 +46,9 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"trajkit.styles" = ["*.mplstyle"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
