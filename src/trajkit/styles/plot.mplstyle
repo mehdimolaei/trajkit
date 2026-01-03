@@ -1,0 +1,57 @@
+# Trajkit default plot style (from Dan Allan's adaptation of Robert Leheny's preferences).
+# Updated August 2014.
+#
+# Usage after install:
+#     import matplotlib as mpl
+#     from importlib.resources import files
+#     mpl.style.use(files("trajkit.styles") / "plot.mplstyle")
+
+# Plot area
+figure.figsize: 10, 8
+figure.facecolor: white
+figure.edgecolor: white
+axes.facecolor : white
+axes.grid: False
+
+# Axes and ticks
+axes.linewidth: 2
+axes.edgecolor: black
+xtick.direction: in
+ytick.direction: in
+xtick.major.size: 10
+xtick.major.width: 2
+xtick.minor.size: 10
+xtick.minor.width: 2
+ytick.major.size: 10
+ytick.major.width: 2
+ytick.minor.size: 10
+ytick.minor.width: 2
+
+# Space xlabels lower than default.
+xtick.major.pad: 10
+xtick.minor.pad: 10
+
+# Font sizes for various elements.
+font.size: 24
+axes.titlesize: 24
+axes.labelsize: 24
+xtick.labelsize: 18
+ytick.labelsize: 18
+legend.fontsize: 12
+
+# Use sans-serif LaTeX for all text.
+font.family: sans-serif
+font.sans-serif: Helvetica
+text.usetex: True
+text.latex.preamble: \usepackage{sfmath}
+
+image.cmap: gray
+
+# Plot elements
+lines.linewidth: 5
+lines.markersize: 18
+
+# savefig options (avoid clipping at margins)
+savefig.bbox : tight
+savefig.pad_inches : 0.2
+
