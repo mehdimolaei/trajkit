@@ -128,9 +128,10 @@ Use the sections below to explore concepts, tutorials, and API details.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Toolss
+   :caption: Tools
 
    tools/cdv_flow_inference
+   tools/two_point_microrheology
 
 
 .. toctree::
