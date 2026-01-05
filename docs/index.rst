@@ -2,7 +2,7 @@
    :width: 360
    :align: center
 
-Trajkit — Spatio-Temporal Trajectory Toolkit
+Spatio-Temporal Trajectory Toolkit
 ============================================
 
 Trajkit is a Python toolkit for analyzing **spatio-temporal trajectories and structured time-series** data.
