@@ -2,40 +2,28 @@
    :width: 360
    :align: center
 
-Trajkit — Spatio-Temporal Trajectory Toolkit
+Spatio-Temporal Trajectory Toolkit
 ============================================
 
-Trajkit is a Python toolkit for analyzing **spatio-temporal trajectories and structured time-series**.
-It is built around a principled, physics-informed data model that separates:
+Trajkit is a Python toolkit for analyzing **spatio-temporal trajectories and structured time-series** data.
+It is built on a principled, physics-informed data model that explicitly separates:
 
-* geometry (positions evolving in time),
-* time structure (frames or continuous timestamps),
-* and metadata (labels, features, experimental context).
+* **state-space coordinates** — positions (and potentially higher-dimensional states) evolving in time
+* **time structure** — discrete frames or continuous timestamps defining temporal sampling
+* **metadata** — labels, features, and experimental or contextual information
 
-This makes trajkit useful across many domains:
+Trajkit supports trajectory analysis across diverse scientific and engineering contexts, including physical transport processes, biological motion, imaging-based tracking, and general multi-dimensional dynamical systems.
 
-* Brownian and non-Brownian colloids
-* active matter and swimming microorganisms
-* hydrodynamic flow inference and correlated displacement velocimetry (CDV)
-* cell and subcellular dynamics
-* imaging-based tracking experiments
-* general multi-dimensional trajectories with meaningful distance metrics
-
-Trajkit treats trajectories not as simple lists of points,
-but as **structured objects evolving in time, embedded in a geometric space,
-and enriched with metadata**. This enables rigorous statistics,
-meaningful geometry, and reproducible scientific workflows.
-
-
-Core Philosophy
+Data Model
 ---------------
 
-Trajkit is designed around three core principles:
+Trajkit adopts a structured representation of trajectories grounded in state-space geometry, temporal organization, and contextual metadata:
 
-1. **Geometry First**
+1. **State-space Representation**
 
-   Positions live in a well-defined metric space so displacement, distance,
-   and gradients are always meaningful.
+   Trajectories are embedded in a metric space, enabling well-defined notions of displacement,
+    distance, and gradient fields.
+   
 
    .. code-block::
 
@@ -46,11 +34,10 @@ Trajkit is designed around three core principles:
        frame  : (T,)    discrete frame index (optional)
        valid  : (T,)    boolean mask for missing / invalid samples
 
-2. **Metadata is powerful — but separate from geometry**
+2. **Context**
 
-   Real experiments encode richness beyond coordinates.
-   Trajkit supports structured metadata without polluting the core geometry.
-
+   Metadata is designed to remain closely associated with the trajectory data. 
+   Experimental labels, derived features, and modality-specific annotations stay synchronized with frames and tracks, enabling reproducible multimodal analysis and reliable data provenance.
    .. code-block::
 
        Metadata
@@ -60,19 +47,17 @@ Trajkit is designed around three core principles:
        frame_features  : per-frame feature arrays
        meta            : arbitrary metadata / provenance
 
-3. **Built for statistics, modeling, and discovery**
+3. **Statistics, and modeling**
 
-   Trajkit provides tools for:
+Trajkit supports a broad range of applications in the analysis of dynamical systems and motion data, including:
 
-   * diffusion and anomalous transport statistics
-   * van Hove distributions and correlations
-   * velocity and displacement statistics
-   * correlated displacement velocimetry (CDV)
-   * handling missing data, smoothing, interpolation
-   * visualization, diagnostics, and dataset-level analysis
-
-Everything works consistently because every analysis routine
-assumes the same clean data model.
+   * characterization of transport behavior and motion regimes
+   * quantification of fluctuations, variability, and heterogeneity in trajectories
+   * inference of underlying flow and collective dynamics (e.g., CDV workflows)
+   * robust handling of experimental imperfections such as missing or irregular samples
+   * exploration, visualization, and systematic interrogation of large trajectory datasets
+   
+   By centering analysis on a consistent, multimodal trajectory representation, Trajkit provides a foundation for studying physical, biological, and engineered systems where entities evolve in time within a meaningful state space.
 
 
 Why This Structure?
@@ -83,7 +68,7 @@ Spatio-temporal data naturally carries three layers of meaning:
 =================  ===========================================
 Layer              Meaning
 =================  ===========================================
-Geometry           where things are and how they move
+State-Space        where things are and how they move
 Time               how evolution unfolds
 Context            what the trajectory represents
 =================  ===========================================
@@ -93,9 +78,8 @@ Separating these cleanly makes trajkit:
 * physically meaningful
 * domain-agnostic
 * scalable
-* machine-learning friendly
+* AI friendly
 * reproducible
-* future-proof
 
 
 Typical Workflow
@@ -107,13 +91,7 @@ A common usage pattern looks like:
 2. Group into trajectories
 3. Construct trajkit objects (``x``, ``t`` or ``frame``, optional ``valid``)
 4. Optionally attach labels, per-track and per-frame features, metadata
-5. Apply analysis tools:
-
-   * Mean-Squared Displacement
-   * van Hove distributions
-   * correlation statistics
-   * hydrodynamic inference (CDV)
-   * visualization and summaries
+5. Apply analysis tools
 
 
 Vision
@@ -144,21 +122,20 @@ Use the sections below to explore concepts, tutorials, and API details.
 
    getting_started/installation
    getting_started/quickstart
-   getting_started/data_model
-   getting_started/examples
-
 
 .. toctree::
    :maxdepth: 2
-   :caption: Core Concepts
+   :caption: Tools
 
-   concepts/trajectories
+   tools/cdv_flow_inference
+   tools/two_point_microrheology
 
 
 .. toctree::
    :maxdepth: 2
    :caption: Tutorials
 
+   tutorials/index
    tutorials/first-notebook
    tutorials/cdv-flow-field
    tutorials/msd
