@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: trajkit
+version: 0.1.0
+type: software
+abstract: >
+  trajkit is a Python toolkit for analyzing spatio-temporal trajectories,
+  computing statistics (MSD, correlations), and inferring flow fields (CDV)
+  for Brownian and active systems.
+authors:
+  - family-names: Molaei
+    given-names: Mehdi
+repository-code: https://github.com/mehdi/trajkit
+license: MIT
+keywords:
+  - trajectories
+  - microrheology
+  - correlated displacement velocimetry
+  - flow inference
+  - python
