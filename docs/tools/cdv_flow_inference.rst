@@ -93,6 +93,13 @@ simple:
 
 This is why CDV can reveal underlying flow-like structure even when raw trajectories look dominated by stochasticity.
 
+.. figure:: /_static/videos/FlowField_airwater_1um_time11min.gif
+   :alt: CDV flow field visualization
+   :align: center
+   :width: 100%
+
+   **Video:** Left panel shows trajectories of Brownian particles; center panel displays transferred displacement vectors; right panel illustrates how the flow field around individual particles emerges as the ensemble size increases over time.
+
 What CDV computes
 -----------------
 - Local average displacement vectors over spatial bins and time windows.
