@@ -26,7 +26,7 @@ templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = "sphinx_book_theme"# "pydata_sphinx_theme"# "sphinx_material" #"sphinx_book_theme" #"pydata_sphinx_theme" # "furo"# "sphinx_rtd_theme"
+html_theme = "sphinx_book_theme"#  "sphinx_rtd_theme"
 html_theme_options = {
     "collapse_navigation": False,
     "navigation_depth": 2,
@@ -36,4 +36,4 @@ html_static_path = ["_static"]
 html_logo = "_static/logo.png"
 
 # Copy non-RST assets (e.g., MP4s in docs/figures) into the built site
-html_extra_path = ["figures"]
+html_extra_path = ["_static/figures"]
