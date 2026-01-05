@@ -36,12 +36,13 @@ pytest -q
 
 
 ## Documentation
-See `docs/` for the rendered site sources (Sphinx). The homepage is `docs/index.rst`, which links to:
-- Getting Started (`docs/getting_started/`)
-- Concepts (`docs/concepts/`)
-- Tools (`docs/tools/`)
-- Tutorials (`docs/tutorials/`)
-- API Reference (`docs/reference/`)
+Rendered docs live at [trajkit-learn.readthedocs.io](https://trajkit-learn.readthedocs.io/).
+Key sections:
+- [Getting Started](https://trajkit-learn.readthedocs.io/en/latest/getting_started/)
+- [Concepts](https://trajkit-learn.readthedocs.io/en/latest/concepts/)
+- [Tools](https://trajkit-learn.readthedocs.io/en/latest/tools/)
+- [Tutorials](https://trajkit-learn.readthedocs.io/en/latest/tutorials/)
+- [API Reference](https://trajkit-learn.readthedocs.io/en/latest/reference/)
 
 Explore more examples in `examples/notebooks`.
 
