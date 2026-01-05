@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/logo.png" alt="trajkit logo" width="260">
+  <img src="docs/_static/logo.png" alt="trajkit logo" width="260">
 </p>
 
 # trajkit
