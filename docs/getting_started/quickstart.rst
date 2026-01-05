@@ -28,4 +28,5 @@ Minimal workflow to build, save, and reload a trajectory set.
 Next steps:
 
 - Compute MSD: ``from trajkit.stats import msd_trajectory_set``
-- Run CDV: see ``tutorials/cdv-flow-field``
+- Run CDV flow inference: see ``tutorials/cdv_example_thermal`` (current CDV tutorial; additional examples are in progress).
+- For real datasets, build trajectory sets from long-form tables with ``TrajectorySet.from_dataframe``.

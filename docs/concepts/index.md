@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Concepts
 
 Key ideas behind trajkit:

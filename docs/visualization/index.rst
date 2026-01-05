@@ -1,7 +1,7 @@
 Visualization
 =============
 
-Trajkit ships a handful of utilities for rendering trajectories and droplet scenes. Start here for a tour of the visualization helpers and worked examples.
+This page highlights visualization helpers and worked examples for studying trajectories and flow-field inference. It is ongoing work and will continue to expand.
 
 .. toctree::
    :maxdepth: 1

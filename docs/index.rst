@@ -134,12 +134,9 @@ Use the sections below to explore concepts, tutorials, and API details.
 .. toctree::
    :maxdepth: 2
    :caption: Tutorials
+   
+   tutorials/cdv_example_thermal
 
-   tutorials/index
-   tutorials/first-notebook
-   tutorials/cdv-flow-field
-   tutorials/cdv_quiver
-   tutorials/msd
 
 .. toctree::
    :maxdepth: 2

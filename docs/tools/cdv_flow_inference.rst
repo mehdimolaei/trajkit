@@ -93,7 +93,7 @@ simple:
 
 This is why CDV can reveal underlying flow-like structure even when raw trajectories look dominated by stochasticity.
 
-.. figure:: /_static/videos/FlowField_airwater_1um_time11min.gif
+.. figure:: /_static/videos/FlowField_airwater_1um_time11min_selected.gif
    :alt: CDV flow field visualization
    :align: center
    :width: 100%
@@ -111,7 +111,8 @@ Typical workflow
 1. Load or build a ``TrajectorySet`` with positions and time/frame info.
 2. Choose spatial binning (e.g., grid spacing) and temporal windowing.
 3. Run CDV to compute displacement/velocity vectors.
-...
+
+.. code-block:: python
 
    # result.field -> displacement/velocity vectors per bin
    # result.meta  -> settings, units, diagnostic stats
@@ -122,7 +123,6 @@ Validation and visualization
 - Check residuals or variance in each bin.
 - Try multiple bin sizes/time windows to assess stability.
 
-Next steps
-----------
-- Add a worked example notebook in ``examples/visualization`` for CDV.
-- Document the concrete API signature once finalized (module/function names may differ).
+See also
+--------
+- :doc:`/tutorials/cdv_example_thermal` — step-by-step CDV walkthrough on an experimental tracer dataset (download, assemble trajectories, compute displacements, and infer the flow field).
