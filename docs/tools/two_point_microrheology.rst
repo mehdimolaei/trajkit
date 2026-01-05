@@ -60,9 +60,10 @@ Compute the two-point correlations:
        clip_to_shared_frames=True,
    )
 
-.. admonition:: Plot placeholder
-
-   Correlation vs separation (longitudinal/transverse, log–log) for a representative ``dt``.
+.. image:: ../_static/figures/twopoint_correlation.png
+   :alt: Longitudinal correlation vs separation for multiple lag times (log–log)
+   :width: 640
+   :align: center
 
 Persist and reload to skip recomputation:
 
@@ -98,12 +99,15 @@ Map correlations to MSD and viscoelastic moduli:
        polyorder=2,
    )
 
-.. admonition:: Plot placeholder
-
-   MSD (longitudinal/transverse) vs lag time, and :math:`G'`, :math:`G''` vs :math:`\omega`.
+.. image:: ../_static/figures/twopoint_correlation_1pMSD.png
+   :alt: Longitudinal MSD from two-point correlation vs lag time (log–log)
+   :width: 640
+   :align: center
 
 Notes: keep ``dt_values`` in frame units when using ``frame_col`` (seconds when using ``time_col``); the saved ``.npz`` is a compressed NumPy archive for fast reloads.
 
 
 .. [Crocker2000] J. C. Crocker et al., “Two-Point Microrheology of Inhomogeneous Soft Materials,” Phys. Rev. Lett. 85, 888–891 (2000).
 .. [Mason1995] T. G. Mason and D. A. Weitz, “Optical Measurements of Frequency-Dependent Linear Viscoelastic Moduli of Complex Fluids,” Phys. Rev. Lett. 74, 1250–1253 (1995).
+
+Back to :doc:`Home <../index>`.

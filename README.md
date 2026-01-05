@@ -8,11 +8,13 @@ Python toolkit for reproducible trajectory (time-series) analytics and flow-fiel
 inference for Brownian and non-Brownian diffusion processes.
 See [ACKNOWLEDGMENTS](ACKNOWLEDGMENTS.md).
 
+This repo is part of a collection of statistical and ML tools I’ve written over the years for analyzing equilibrium and nonequilibrium systems. It’s a continuation of what I learned during my graduate and post-graduate work. More recently, I wanted to learn some new Python libraries and experiment with newer methods on top of my earlier work, so this became a “learning project” for building a cleaner, more reusable toolkit. I have a few CDV-related projects in mind and will share them over time as they’re ready. If you notice something that should be credited more clearly, want to contribute, or have suggestions to improve the code or docs, I’d genuinely appreciate an issue or PR.
+
 ## Features
 - Lightweight `Trajectory` and `TrajectorySet` data model (frame- or time-based)
 - Fast Parquet I/O helpers for saving/loading datasets
-- MSD/statistics helpers for single trajectories and trajectory sets
-- Conditional displacement/velocity (CDV) utilities to infer flow fields
+- Statitical analysis for single trajectories and trajectory sets
+- Flow fields inference. 
 - Ready-to-adapt notebooks and plotting helpers for publication-quality figures
 
 ## Install
@@ -32,51 +34,16 @@ pip install -e ".[dev]"
 pytest -q
 ```
 
-## Quickstart
-Create and persist a trajectory set:
-
-```python
-import numpy as np
-from trajkit import (
-    Trajectory,
-    TrajectorySet,
-    save_trajectory_set,
-    load_trajectory_set,
-)
-
-x = np.cumsum(np.random.randn(200, 2), axis=0)
-frame = np.arange(200)
-
-tr = Trajectory(
-    track_id="p1",
-    x=x,
-    frame=frame,
-    frame_rate_hz=20.0,
-    label="passive",
-)
-
-ts = TrajectorySet(dataset_id="demo")
-ts.add(tr)
-ts.summary_table().head()
-
-save_trajectory_set(ts, "examples/datasets/demo_brownian_2d")
-ts2 = load_trajectory_set("examples/datasets/demo_brownian_2d", frame_rate_hz=20.0)
-```
-
-Compute MSD for a trajectory set:
-
-```python
-from trajkit.stats import msd_trajectory_set
-msd_df = msd_trajectory_set(ts2)
-```
-
-Explore more examples in `examples/notebooks`.
 
 ## Documentation
-See `docs/` for the rendered site sources (MkDocs). Key entry points:
-- `docs/index.md` for an overview
-- `docs/getting-started.md` for the minimal workflow
-- `docs/tutorials` and `examples/notebooks` for end-to-end notebooks
+See `docs/` for the rendered site sources (Sphinx). The homepage is `docs/index.rst`, which links to:
+- Getting Started (`docs/getting_started/`)
+- Concepts (`docs/concepts/`)
+- Tools (`docs/tools/`)
+- Tutorials (`docs/tutorials/`)
+- API Reference (`docs/reference/`)
+
+Explore more examples in `examples/notebooks`.
 
 ## Contributing
 Issues and PRs are welcome. Please see [CONTRIBUTING](CONTRIBUTING.md) for guidelines.

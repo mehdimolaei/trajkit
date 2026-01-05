@@ -122,9 +122,6 @@ Use the sections below to explore concepts, tutorials, and API details.
 
    getting_started/installation
    getting_started/quickstart
-   getting_started/data_model
-   getting_started/examples
-
 
 .. toctree::
    :maxdepth: 2
@@ -138,6 +135,7 @@ Use the sections below to explore concepts, tutorials, and API details.
    :maxdepth: 2
    :caption: Tutorials
 
+   tutorials/index
    tutorials/first-notebook
    tutorials/cdv-flow-field
    tutorials/msd
