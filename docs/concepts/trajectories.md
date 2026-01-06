@@ -1,3 +1,7 @@
+---
+orphan: true
+---
+
 # Trajectories
 
 `trajkit` centers around two core objects:

@@ -176,9 +176,11 @@ def connection_batch_from_dataframes(
     a source-aligned frame.
 
     Returns (batch, meta_df) where:
+
       - batch.coords are rotated connection vectors (shape N, 2)
       - batch.values are rotated tracer displacement vectors plus any extra tracer values
       - meta_df tracks frame + indices of the contributing source/tracer rows
+
 
     Args:
         source_positions: DataFrame with at least frame_col and position_cols.
